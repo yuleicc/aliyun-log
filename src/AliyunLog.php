@@ -38,6 +38,35 @@ class AliyunLog
         var_dump($res1);
     }
 
+    /**
+     * write aliyun logs.
+     * @return object
+     */
+    public function putLogs($data)
+    {
+        $topic = 'testTopic';
+        $logItem = new \Aliyun_Log_Models_LogItem();
+        $logItem->setTime(time());
+        $logItem->setContents($data);
+        $logitems = [$logItem];
+        $request = new \Aliyun_Log_Models_PutLogsRequest(
+            $this->config['project'],
+            $this->config['$logstore'],
+            $topic,
+            null,
+            $logitems
+        );
+
+        try {
+            $response = $this->client->putLogs($request);
+            $this->logVarDump($response);
+        } catch (\Aliyun_Log_Exception $ex) {
+            $this->logVarDump($ex);
+        } catch (Exception $ex) {
+            $this->logVarDump($ex);
+        }
+    }
+
     public function logVarDump($expression)
     {
         print '<br>loginfo begin = ' . get_class($expression) . '<br>';
