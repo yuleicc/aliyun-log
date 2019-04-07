@@ -56,7 +56,7 @@ class AliyunLog
         $logitems = [$logItem];
         $request = new \Aliyun_Log_Models_PutLogsRequest(
             $this->config['project'],
-            $this->config['$logstore'],
+            $this->config['logstore'],
             $topic,
             null,
             $logitems
