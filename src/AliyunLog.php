@@ -5,6 +5,11 @@ namespace Yuleicc\AliyunLog;
 class AliyunLog
 {
     /**
+     * client
+     */
+    protected $client;
+
+    /**
      * @var array
      */
     protected $config = [
