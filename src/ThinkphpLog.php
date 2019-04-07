@@ -17,7 +17,7 @@ class ThinkphpLog
         'time_format' => 'Y-m-d H:i:s',
         'file_size' => 2097152,
         'path' => LOG_PATH,
-        'endpoint' => 'http://cn-shanghai-corp.sls.aliyuncs.com',
+        'endpoint' => 'http://cn-shanghai.log.aliyuncs.com',
         'accessKeyId' => '',
         'accessKey' => '',
         'project' => '',
